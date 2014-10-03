@@ -1,0 +1,14 @@
+""""""""""""""""""""""""""""""
+" airline
+""""""""""""""""""""""""""""""
+
+let g:airline_theme             = 'murmur'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+
+""""""""""""""""""""""""""""""
+" nerdtree-tabs
+""""""""""""""""""""""""""""""
+
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_autofind            = 1

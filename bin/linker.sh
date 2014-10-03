@@ -19,8 +19,6 @@ for file in dotfiles/.[^.]*; do
   base=$(basename $file)
   target="$HOME/$(basename $file)"
 
-  echo $file
-
   if [[ -h $target && ($(readlink $target) == $path)]]; then
     echo -e "\x1B[90m~/$base is symlinked to your dotfiles.\x1B[39m"
   elif [[ -f $target && $(md5 $path) == $(md5 $target) ]]; then

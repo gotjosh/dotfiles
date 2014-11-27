@@ -12,7 +12,16 @@ directory_warning() {
   fi
 }
 
+create_default_directories() {
+  mkdir ~/go
+  mkdir ~/rails
+  mkdir ~/ruby
+  mkdir ~/node
+  mkdir ~/.vim/autoload
+}
+
 directory_warning
+create_default_directories
 
 for file in dotfiles/.[^.]*; do
   path="$(pwd)/$file"

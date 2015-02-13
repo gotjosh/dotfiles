@@ -42,5 +42,6 @@ terryma/vim-multiple-cursors
 bling/vim-airline
 jistr/vim-nerdtree-tabs
 scrooloose/nerdtree
+scrooloose/syntastic
 fatih/vim-go
 mustache/vim-mustache-handlebars

@@ -46,4 +46,4 @@ scrooloose/syntastic
 fatih/vim-go
 mustache/vim-mustache-handlebars
 elixir-lang/vim-elixir
-
+bundle/puppet

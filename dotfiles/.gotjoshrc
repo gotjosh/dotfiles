@@ -1,5 +1,6 @@
 # vim:set ft=sh sw=2 sts=2:
 
+[ -f "$(brew --prefix autoenv)/activate.sh" ] && source "$(brew --prefix autoenv)/activate.sh"
 
 # Custom Directories
 [ -e "$RUBY_DIR" ] || RUBY_DIR="$HOME/ruby"

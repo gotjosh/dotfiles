@@ -48,3 +48,4 @@ mustache/vim-mustache-handlebars
 elixir-lang/vim-elixir
 rodjek/vim-puppet
 vim-airline/vim-airline-themes
+airblade/vim-gitgutter

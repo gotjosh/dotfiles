@@ -4,6 +4,9 @@
 
 [ -f "$(brew --prefix autoenv)/activate.sh" ] && source "$(brew --prefix autoenv)/activate.sh"
 
+export NVM_DIR="$HOME/.nvm"
+ . "/usr/local/opt/nvm/nvm.sh"
+
 # Custom Directories
 [ -e "$RUBY_DIR" ] || RUBY_DIR="$HOME/ruby"
 export RUBY_DIR

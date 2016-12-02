@@ -50,3 +50,5 @@ rodjek/vim-puppet
 vim-airline/vim-airline-themes
 airblade/vim-gitgutter
 ervandew/supertab
+thoughtbot/vim-rspec
+janko-m/vim-test

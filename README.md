@@ -2,7 +2,7 @@
 
 Dotfiles I have carefully crafted (and gathered) over the time.
 
-They are "heavily" inspired by [Hashrocket's Dotmatrix](http://github.com/hashrocket/dotmatrix) and I borrowed most of the `linker.sh` from [Sirupsen](http://github.com/sirupsen).
+They are "heavily" inspired by [Hashrocket's Dotmatrix](http://github.com/hashrocket/dotmatrix), [Thoughbot's dotfiles](https://github.com/thoughtbot/dotfiles) and I borrowed most of the `linker.sh` from [Sirupsen](http://github.com/sirupsen).
 
 # The Setup.
 

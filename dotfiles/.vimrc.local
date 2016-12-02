@@ -12,3 +12,9 @@ let g:airline_enable_syntastic  = 1
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let g:nerdtree_tabs_autofind            = 1
+
+""""""""""""""""""""""""""""""
+" custom
+""""""""""""""""""""""""""""""
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%91v.\+/

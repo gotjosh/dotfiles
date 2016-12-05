@@ -57,10 +57,6 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
-" Make it obvious where 90 characters is
-set textwidth=90
-set colorcolumn=+1
-
 " Numbers
 set number
 set numberwidth=5

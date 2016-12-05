@@ -3,3 +3,6 @@
 .sw?
 .DS_Store
 /tags
+.projections.json
+.env
+.ruby-gemset

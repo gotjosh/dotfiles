@@ -12,6 +12,7 @@ set visualbell
 
 set wildmenu
 set wildmode=list:longest,full
+setlocal spell
 
 set noswapfile
 set ruler

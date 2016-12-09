@@ -52,3 +52,6 @@ airblade/vim-gitgutter
 ervandew/supertab
 thoughtbot/vim-rspec
 janko-m/vim-test
+jgdavey/vim-blockle
+kien/ctrlp.vim
+vim-airline/vim-airline-themes

@@ -1,3 +1,7 @@
+--sort-files
+--follow
+--color
+--group
 # Search unknown file-types
 --type-set=coffee=.coffee
 --type-set=cucumber=.feature

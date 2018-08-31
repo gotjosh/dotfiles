@@ -52,8 +52,15 @@
 	prune=true
 
 
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
-
 [hub]
 protocol = https
+[user]
+	name = gotjosh
+	email = josue.abreu@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/

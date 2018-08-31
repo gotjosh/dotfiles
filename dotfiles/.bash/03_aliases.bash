@@ -1,5 +1,7 @@
 #! /bin/bash
 
+alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+
 alias ll='ls -l'
 
 alias vi='vim'
@@ -26,3 +28,13 @@ alias gr='git rebase'
 alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias reset-authors='git commit --amend --reset-author -C HEAD'
+
+# k8s
+
+alias k="kubectl"
+alias kg="kubectl get"
+alias kl="kubectl logs"
+
+# Minikube
+
+alias mk="minikube"

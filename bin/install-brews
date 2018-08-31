@@ -1,0 +1,51 @@
+#!/usr/bin/ruby
+
+brews = %w(
+  ack
+  autoenv
+  bash-completion
+  envchain
+  ctags
+  elasticsearch
+  elixir
+  findutils
+  git
+  gnutls
+  gpg-agent
+  heroku
+  heroku-node
+  htop
+  htop-osx
+  hub
+  macvim
+  nvm
+  postgresql@9.4
+  python
+  rbenv
+  rbenv-gemset
+  ruby-build
+  rabbitmq
+  readline
+  redis
+  sqlite
+  srm
+  the_silver_searcher
+  tig
+  tree
+  wget
+  vim
+)
+
+installed_brews = `brew list`.split("\n")
+puts("about to install brews...")
+
+brews.each do |brew|
+  if installed_brews.include?(brew)
+    puts("-- #{brew} installed --")
+  else
+    puts("")
+    system("brew install #{brew}")
+  end
+end
+
+puts("done installing brews!")

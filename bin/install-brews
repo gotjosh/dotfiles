@@ -3,14 +3,14 @@
 brews = %w(
   ack
   bash-completion
-  envchain
   ctags
+  dep
   elasticsearch
   elixir
+  envchain
   findutils
   git
   gnutls
-  dep
   go
   gpg-agent
   heroku
@@ -22,19 +22,19 @@ brews = %w(
   nvm
   postgresql@9.4
   python
+  rabbitmq
   rbenv
   rbenv-gemset
-  ruby-build
-  rabbitmq
   readline
   redis
+  ruby-build
   sqlite
   srm
   the_silver_searcher
   tig
   tree
-  wget
   vim
+  wget
 )
 
 installed_brews = `brew list`.split("\n")

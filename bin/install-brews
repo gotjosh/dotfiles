@@ -3,6 +3,7 @@
 brews = %w(
   ack
   bash-completion
+  cmake
   ctags
   dep
   elasticsearch

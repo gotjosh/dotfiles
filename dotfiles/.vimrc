@@ -33,7 +33,8 @@ endif"
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
 
-set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
+
 
 " Remap ctrl + p to FZF
 nnoremap <silent> <C-p> :FZF<CR>

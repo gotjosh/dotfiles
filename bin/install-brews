@@ -2,7 +2,6 @@
 
 brews = %w(
   ack
-  autoenv
   bash-completion
   envchain
   ctags

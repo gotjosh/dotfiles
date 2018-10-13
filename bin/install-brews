@@ -14,9 +14,7 @@ brews = %w(
   git
   gnutls
   go
-  gpg-agent
   heroku
-  heroku-node
   htop
   htop-osx
   hub
@@ -31,7 +29,6 @@ brews = %w(
   redis
   ruby-build
   sqlite
-  srm
   the_silver_searcher
   tig
   tree

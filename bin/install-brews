@@ -10,6 +10,8 @@ brews = %w(
   findutils
   git
   gnutls
+  dep
+  go
   gpg-agent
   heroku
   heroku-node

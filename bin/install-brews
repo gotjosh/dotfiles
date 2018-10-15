@@ -6,6 +6,7 @@ brews = %w(
   cmake
   ctags
   dep
+  direnv
   elasticsearch
   elixir
   envchain

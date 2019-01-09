@@ -29,6 +29,7 @@ brews = %w(
   readline
   redis
   ruby-build
+  srm
   sqlite
   the_silver_searcher
   tig

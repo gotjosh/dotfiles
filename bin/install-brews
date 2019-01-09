@@ -15,9 +15,7 @@ brews = %w(
   git
   gnutls
   go
-  heroku
   htop
-  htop-osx
   hub
   macvim
   nvm
@@ -29,12 +27,10 @@ brews = %w(
   readline
   redis
   ruby-build
-  srm
   sqlite
   the_silver_searcher
   tig
   tree
-  vim
   wget
 )
 

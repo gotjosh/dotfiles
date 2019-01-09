@@ -34,6 +34,11 @@ brews = %w(
   wget
 )
 
+casks = %w(
+  spectacle
+  iterm2
+)
+
 installed_brews = `brew list`.split("\n")
 puts("about to install brews...")
 
@@ -47,3 +52,18 @@ brews.each do |brew|
 end
 
 puts("done installing brews!")
+
+
+installed_cask_brews = `brew cask list`.split("\n")
+puts("about to install cask brews...")
+
+casks.each do |brew|
+  if installed_cask_brews.include?(brew)
+    puts("-- #{brew} installed --")
+  else
+    puts("")
+    system("brew cask install #{brew}")
+  end
+end
+
+puts("done installing cask brews!")

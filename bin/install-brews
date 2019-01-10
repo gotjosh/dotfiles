@@ -2,6 +2,7 @@
 
 brews = %w(
   ack
+  bash
   bash-completion
   cmake
   ctags

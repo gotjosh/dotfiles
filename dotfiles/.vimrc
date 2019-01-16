@@ -35,7 +35,6 @@ vnoremap <silent> <S-TAB> <gv
 
 set rtp+=/usr/local/opt/fzf
 
-
 " Remap ctrl + p to FZF
 nnoremap <silent> <C-p> :FZF<CR>
 
@@ -114,9 +113,10 @@ set numberwidth=5
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
+autocmd FileType go set nolist " but don't do it in go.
 
 " Word wrap ruby comments to 85 characters
-autocmd FileType ruby                   setlocal comments=:#\  tw=85
+autocmd FileType ruby setlocal comments=:#\  tw=85
 
 set hidden
 

@@ -38,6 +38,7 @@ brews = %w(
 casks = %w(
   spectacle
   iterm2
+  grammarly
 )
 
 installed_brews = `brew list`.split("\n")

@@ -49,3 +49,5 @@ junegunn/fzf.vim
 lervag/vimtex
 Valloric/YouCompleteMe
 fatih/vim-go
+ekalinin/Dockerfile.vim
+hashivim/vim-terraform

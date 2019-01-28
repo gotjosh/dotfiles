@@ -36,13 +36,18 @@ brews = %w(
 )
 
 casks = %w(
-  spectacle
-  iterm2
+  visual-studio-code
   grammarly
+  iterm2
+  spectacle
 )
 
 installed_brews = `brew list`.split("\n")
 puts("about to install brews...")
+
+instructions = [
+  "install fzf executables for the shell - typically /usr/local/opt/fzf/install"
+]
 
 brews.each do |brew|
   if installed_brews.include?(brew)
@@ -69,3 +74,6 @@ casks.each do |brew|
 end
 
 puts("done installing cask brews!")
+
+puts("-- further instructions --")
+instructions.each { |i| puts i }

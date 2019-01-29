@@ -36,10 +36,11 @@ brews = %w(
 )
 
 casks = %w(
-  visual-studio-code
+  brew
   grammarly
   iterm2
   spectacle
+  visual-studio-code
 )
 
 installed_brews = `brew list`.split("\n")

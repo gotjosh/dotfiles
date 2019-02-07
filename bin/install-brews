@@ -4,6 +4,7 @@ brews = %w(
   ack
   bash
   bash-completion
+  circleci
   cmake
   ctags
   dep

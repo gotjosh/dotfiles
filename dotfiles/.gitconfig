@@ -50,6 +50,8 @@
 	algorithm = patience
 [fetch]
 	prune=true
+[commit]
+	template = ~/.gitmessage
 
 
 [hub]

@@ -38,6 +38,9 @@ brews = %w(
 
 casks = %w(
   brew
+  dash
+  docker
+  github
   grammarly
   iterm2
   spectacle

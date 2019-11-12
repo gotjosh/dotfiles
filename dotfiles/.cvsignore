@@ -7,3 +7,4 @@
 .env
 .ruby-gemset
 .idea
+.nvmrc

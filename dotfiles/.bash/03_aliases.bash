@@ -31,10 +31,28 @@ alias reset-authors='git commit --amend --reset-author -C HEAD'
 
 # k8s
 
+## Add completion
+complete -F __start_kubectl k
+
 alias k="kubectl"
 alias kg="kubectl get"
 alias kl="kubectl logs"
 
+## Kubectx
+alias kctx="kubectx"
+alias kns="kubens"
+
+# image by name
+function k-img-for {
+  kubectl get pods -l name="$@" -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.containers[*]}{.image}{", "}{end}{end}' | sort
+}
+
+
 # Minikube
 
 alias mk="minikube"
+
+# Good diff
+function diff {
+  colordiff -u "$@" | less -RF
+}

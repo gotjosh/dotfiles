@@ -47,8 +47,15 @@ gabrielelena/vim-markdown
 chriskempson/base16-vim
 junegunn/fzf.vim
 lervag/vimtex
-Valloric/YouCompleteMe
 fatih/vim-go
 ekalinin/Dockerfile.vim
 hashivim/vim-terraform
 mrk21/yaml-vim
+Quramy/tsuquyomi
+leafgarland/typescript-vim
+neoclide/coc.nvim
+majutsushi/tagbar
+tpope/vim-rhubarb
+google/vim-jsonnet
+JamshedVesuna/vim-markdown-preview
+hashivim/vim-terraform

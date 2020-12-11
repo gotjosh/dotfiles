@@ -5,10 +5,13 @@ brews = %w(
   bash
   bash-completion
   circleci
+  coreutils
   cmake
   ctags
   dep
   direnv
+  kubectx
+  grip
   elasticsearch
   elixir
   envchain
@@ -16,6 +19,8 @@ brews = %w(
   fzf
   git
   gnutls
+  gnu-getopt
+  gnu-tar
   go
   htop
   hub
@@ -42,6 +47,7 @@ casks = %w(
   iterm2
   spectacle
   visual-studio-code
+  k9s
 )
 
 installed_brews = `brew list`.split("\n")

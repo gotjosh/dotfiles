@@ -1,0 +1,87 @@
+#!/usr/bin/ruby
+
+require 'gmail-britta'
+
+my_email = ENV["EMAIL"] || "josue@grafana.com"
+personal_email = ENV["PERSONAL_EMAIL"] || "josue.abreu@gmail.com"
+
+filter_set = GmailBritta.filterset(:me => my_email) do
+  ########################################
+  # Internal email lists
+  ########################################
+
+  %w(
+    all-staff
+    grafana-team
+  ).each do |group|
+    filter {
+      has "to:#{group}@grafana.com"
+      label "internal/#{group}"
+      mark_important
+    }
+  end
+
+  ########################################
+  # Bulk emails
+  ########################################
+
+  filter {
+    has "from:builds@circleci.com"
+    label "bulk/circle-ci"
+    archive
+    mark_read
+    mark_unimportant
+  }
+
+  filter {
+    has "from:noreply@statuspage.io subject:[CircleCI status]"
+    label "bulk/circle-ci"
+    archive
+    mark_read
+    mark_unimportant
+  }
+
+  filter {
+    has "from:app@statushero.com"
+    label "bulk/status-hero"
+    archive
+    mark_read
+    mark_unimportant
+  }
+
+  ########################################
+  # GitHub
+  ########################################
+
+  filter {
+    has "from:notifications@github.com"
+    label "github/notifications"
+  }
+
+  # GitHub mention
+  filter {
+    has "from:notifications@github.com @gotjosh"
+    mark_important
+    star
+  }
+
+  # GitHub review
+  filter {
+    has "from:notifications@github.com AND \"requested your review on\""
+    mark_important
+    star
+  }
+
+  #
+  # Status Hero
+  #
+
+  filter {
+    has "from:notifications@15five.com"
+    label "15five"
+    mark_important
+  }
+
+end
+
+puts filter_set.generate

@@ -57,7 +57,8 @@
 protocol = https
 [user]
 	name = gotjosh
-	email = josue.abreu@gmail.com
+	email = josue@grafana.com
+	signingkey = 656B3EC3
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -65,3 +66,7 @@ protocol = https
 	required = true
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true

@@ -1,0 +1,11 @@
+*~
+.*.sw?
+.sw?
+.DS_Store
+/tags
+.projections.json
+.env
+.ruby-gemset
+.idea
+.nvmrc
+.envrc

@@ -1,0 +1,77 @@
+# Enable Brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+PATH="$PATH:/usr/local/bin"                   # Homebrew
+PATH="$PATH:/usr/local/sbin"                  # Homebrew
+PATH="$PATH:/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin"
+PATH="$HOME/.rbenv/bin:$PATH"                 # rbenv path
+PATH="./bin:$PATH"                            # current path
+
+export PATH
+
+# Configure rbenv
+if [ -n "$(rbenv --version 2>/dev/null)" ];
+then
+  eval "$(rbenv init -)"
+fi
+
+# Configure Node
+
+# Load Fast Node Manager
+eval "$(fnm env)"
+
+# Configure GOPATH
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
+# Brew is slow, so calculate the prefix once
+export BREW_PREFIX="$(dirname $(dirname $(which brew)))/opt"
+
+##
+# Shell Config
+##
+
+# Store the history in case of exit
+export HISTFILE=$HOME/.zhistory
+# Store 500,000 history entries
+export HISTSIZE=500000
+export SAVEHIST=500000
+# Don't store duplicates
+setopt HIST_EXPIRE_DUPS_FIRST
+# Append to history file
+setopt APPEND_HISTORY
+# Save timestamp and runtime info
+setopt EXTENDED_HISTORY
+# Share the history
+setopt SHARE_HISTORY
+
+# VIM as the default editor
+export EDITOR="$(which nvim)"
+
+# Enable reverse-i search
+bindkey '^R' history-incremental-search-backward
+
+# Intelligent mv
+autoload -U zmv
+
+# Autocompletion
+autoload -U compinit && compinit
+autoload -U bashcompinit && bashcompinit
+
+# Glob-like autocomplete
+setopt glob_complete
+
+# Colors
+export CLICOLOR=1
+export CLRCOL=$'\e[0m'
+
+# Autoenv
+[ -f "${BREW_PREFIX}/autoenv/activate.sh" ] && source "${BREW_PREFIX}/autoenv/activate.sh"
+
+# Load more configuration
+source ~/.zsh/aliases
+source ~/.zsh/prompt
+
+setopt promptsubst
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

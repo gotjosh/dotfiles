@@ -1,0 +1,8 @@
+[github]
+	user = gotjosh
+[user]
+	email = josue.abreu@gmail.com
+	name  = "Josue Abreu"
+  signingkey = 731A782929412860
+[gpg]
+  program = gpg

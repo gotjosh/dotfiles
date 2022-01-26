@@ -1,0 +1,57 @@
+_prompt_trunc_path()
+{
+  # How many characters of the $PWD should be kept
+  local pwdmaxlen=30
+  local wd=$1
+
+  # Indicator that there has been directory truncation:
+  local trunc_symbol="..."
+  if [ "${#wd}" -gt $pwdmaxlen ]
+  then
+    local pwdoffset=$(( ${#wd} - $pwdmaxlen ))
+    newPWD=`echo -e ${trunc_symbol}${wd:$pwdoffset:$pwdmaxlen} | sed 's/^\.\.\.\([^/]*\)/.../g'`
+  else
+    newPWD=$wd
+  fi
+  echo -e $newPWD | sed 's/\\//g'
+}
+
+_prompt_pwd_ps1()
+{
+  # Include -P to resolve symlinks
+  local wd="$(pwd | sed 's/ /\\ /g')" # -P`
+
+  local git_root=`git rev-parse --show-toplevel 2>/dev/null`
+  if [ -n "$git_root" ];
+  then # ON GIT
+    local basedir=`dirname "$git_root"`
+    wd='...'${wd#$basedir}
+  fi
+  echo -e `_prompt_trunc_path "$wd"`
+}
+
+_prompt_git_ps1()
+{
+  branch=$(git branch 2>/dev/null | perl -wnl -e '/(?<=\*\s).*/ and print $&;')
+  [ -n "$branch" ] && echo " %{$WHITE%}on %{$PINK%}($branch)"
+}
+
+# Preload whether we have kubectl, so we don't compute a which every prompt
+if which kubectl >/dev/null 2>&1; then
+  KUBERNETES=1
+fi
+
+_prompt_lambda()
+{
+  echo -n "🙇"
+  [ -n "$VIRTUAL_ENV" ] && echo -n " ($(basename $VIRTUAL_ENV))"
+  [ -n "$KUBERNETES"  ] && echo -n " ($(grep current-context ~/.kube/config | cut -d' ' -f2))"
+  echo -n " ~> "
+}
+
+# Set to the standard debian color scheme
+PROMPT="%{$PINK%}%n%{$CLRCOL%} "                                        # username
+PROMPT=$PROMPT"%{$WHITE%}at %{$ORANGE%}$HOST"                           # hostname
+PROMPT=$PROMPT" %{$WHITE%}in %{$GREEN%}"'$(_prompt_pwd_ps1)'            # working dir
+PROMPT=$PROMPT'$(_prompt_git_ps1) '$'\n'                                # git branch
+PROMPT=$PROMPT"%{$WHITE%}"'$(_prompt_lambda)'"%{$CLRCOL%}%{$GREY%}"     # $ > grey

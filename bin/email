@@ -58,9 +58,18 @@ filter_set = GmailBritta.filterset(:me => my_email) do
     label "github/notifications"
   }
 
-  # GitHub mention
+  # GitHub mention - mimir maintainers
   filter {
-    has "from:notifications@github.com @gotjosh"
+    has "from:notifications@github.com @grafana/mimir-maintainers"
+    label "mimir-mantainer"
+    mark_important
+    star
+  }
+
+  # GitHub mention - alerting-squad
+  filter {
+    has "from:notifications@github.com @grafana/alerting-squad"
+    label "alerting-squad"
     mark_important
     star
   }
@@ -73,7 +82,7 @@ filter_set = GmailBritta.filterset(:me => my_email) do
   }
 
   #
-  # Status Hero
+  # 15five
   #
 
   filter {

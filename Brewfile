@@ -4,6 +4,7 @@ cask_args appdir: "~/Applications", require_sha: true
 tap "grafana/homebrew-grafana"
 tap "homebrew/cask"
 tap "drone/drone"
+tap "dagger/tap"
 
 # Cask-based formulae
 cask "1password"
@@ -17,7 +18,6 @@ cask "slack"
 cask "spectacle"
 cask "kap"
 cask "paw"
-cask "spotify"
 
 # Tooling
 brew "awscli"
@@ -27,6 +27,7 @@ brew "az"
 brew "cmake"
 brew "coreutils"
 brew "ctags"
+brew "dagger"
 brew "direnv"
 brew "dnsmasq"
 brew "drone"
